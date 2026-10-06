@@ -1,0 +1,10 @@
+{
+  "author": "Ahnaf Amin Pranto portfolio project, prepared with Codex",
+  "source": "Hand-authored synthetic educational fixtures; no real mailbox or organization data",
+  "samples": [
+    {"file": "benign.eml", "expected_rules": [], "score": 0, "completeness": "complete"},
+    {"file": "suspicious.eml", "expected_rules": ["SENDER-01", "LINK-01"], "score": 4, "completeness": "complete"},
+    {"file": "attachment.eml", "expected_rules": ["ATTACH-01"], "score": 3, "completeness": "complete"},
+    {"file": "partial.eml", "expected_rules": [], "score": null, "completeness": "partial"}
+  ]
+}

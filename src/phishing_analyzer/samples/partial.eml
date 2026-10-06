@@ -1,0 +1,5 @@
+From: Sample <sample@example.org>
+Subject: Incomplete MIME sample
+Content-Type: multipart/mixed; boundary="missing"
+
+This deliberately malformed synthetic email has no MIME boundary.

@@ -1,0 +1,10 @@
+From: Library <library@example.org>
+To: student@example.net
+Subject: Your study room reservation
+Date: Mon, 05 Oct 2026 09:00:00 -0400
+Authentication-Results: mail.example.net; spf=pass; dkim=pass; dmarc=pass
+Content-Type: text/plain; charset=utf-8
+
+Your room reservation is confirmed for Thursday.
+Details: https://library.example.org/reservations
+This is a synthetic educational sample. No real organization or person is represented.

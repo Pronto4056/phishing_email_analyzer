@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "ruleset_version": "1.0",
+  "filename": "suspicious.eml",
+  "sha256": "01d298e2a13f7b6f65f4560931b55bdf73c1087f71a66b1d09d254064512a1e5",
+  "completeness": "complete",
+  "warnings": [],
+  "headers": {
+    "from": [
+      {
+        "id": "header:from:0",
+        "value": "Account Desk <desk@example.org>"
+      }
+    ],
+    "reply-to": [
+      {
+        "id": "header:reply-to:0",
+        "value": "recovery@other.example"
+      }
+    ],
+    "to": [
+      {
+        "id": "header:to:0",
+        "value": "student@example.net"
+      }
+    ],
+    "subject": [
+      {
+        "id": "header:subject:0",
+        "value": "Action required: account access"
+      }
+    ],
+    "date": [],
+    "message-id": []
+  },
+  "links": [
+    {
+      "id": "link:0",
+      "url": "https://review.other.example/verify",
+      "host": "review.other.example",
+      "occurrences": [
+        {
+          "part_id": "part:0",
+          "display": "https://example.org/account",
+          "claimed_host": "example.org",
+          "source": "anchor"
+        }
+      ]
+    }
+  ],
+  "attachments": [],
+  "authentication": [
+    {
+      "id": "header:authentication-results:0",
+      "authserv_id": "forged.example",
+      "outcomes": [
+        {
+          "method": "spf",
+          "result": "pass"
+        },
+        {
+          "method": "dkim",
+          "result": "pass"
+        },
+        {
+          "method": "dmarc",
+          "result": "pass"
+        }
+      ],
+      "raw": "forged.example; spf=pass; dkim=pass; dmarc=pass",
+      "verified": false
+    }
+  ],
+  "findings": [
+    {
+      "rule_id": "SENDER-01",
+      "title": "Sender / reply-to domain mismatch",
+      "category": "sender",
+      "weight": 1,
+      "explanation": "Replies go to a different full domain. Legitimate support services can do this.",
+      "recommendation": "Confirm the reply destination through a known contact channel.",
+      "evidence": [
+        {
+          "reference": "header:reply-to:0",
+          "observed": "From: example.org | Reply-To: other.example"
+        }
+      ]
+    },
+    {
+      "rule_id": "LINK-01",
+      "title": "Displayed link differs from destination",
+      "category": "link",
+      "weight": 3,
+      "explanation": "The visible hostname does not match the actual link host.",
+      "recommendation": "Review the destination as text; do not open the link to verify it.",
+      "evidence": [
+        {
+          "reference": "link:0",
+          "observed": "Displayed: example.org | Actual: review.other.example"
+        }
+      ]
+    }
+  ],
+  "score": 4,
+  "rating": "High observed concern",
+  "summary": "Review the evidence and context before deciding the next triage action.",
+  "empty_body": false,
+  "limitations": [
+    "Heuristic triage priority, not a phishing probability or safe/unsafe verdict.",
+    "Authentication headers are unverified and may be forged. No DNS or cryptographic checks are performed.",
+    "No link visits, reputation checks, attachment execution, archive extraction, or malware scanning.",
+    "Full-hostname comparison can flag legitimate service domains and subdomains.",
+    "Input and runtime limits are enforced, but the parsing subprocess is not a hard RAM sandbox."
+  ]
+}

@@ -1,0 +1,8 @@
+From: Account Desk <desk@example.org>
+Reply-To: recovery@other.example
+To: student@example.net
+Subject: Action required: account access
+Authentication-Results: forged.example; spf=pass; dkim=pass; dmarc=pass
+Content-Type: text/html; charset=utf-8
+
+<html><body><h2>Review your account</h2><p>Please review your account details.</p><a href="https://review.other.example/verify">https://example.org/account</a><img src="https://remote.other.example/pixel"><script>window.EMAIL_SCRIPT_EXECUTED=true</script><p>Synthetic educational sample.</p></body></html>

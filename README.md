@@ -73,4 +73,3 @@ See [verification evidence](evidence/verification.md), [the case study](docs/cas
 Repository: [Pronto4056/phishing_email_analyzer](https://github.com/Pronto4056/phishing_email_analyzer), separate from `dayflow-desktop`. No hosting is required to run the app. Public Python hosting would require a separate design/security review; source and synthetic documentation are sufficient for this version.
 
 MIT license. See [LICENSE](LICENSE).
-

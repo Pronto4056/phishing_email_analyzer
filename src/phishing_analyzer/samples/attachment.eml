@@ -1,0 +1,17 @@
+From: Billing <billing@example.org>
+To: student@example.net
+Subject: Invoice attachment (synthetic)
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="demo"
+
+--demo
+Content-Type: text/plain; charset=utf-8
+
+Please review the attached invoice. This is a synthetic fixture.
+--demo
+Content-Type: application/octet-stream
+Content-Disposition: attachment; filename="invoice.pdf.exe"
+Content-Transfer-Encoding: base64
+
+U1lOVEhFVElD
+--demo--

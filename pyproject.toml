@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phishing-email-analyzer"
+version = "1.0.0"
+description = "Local, explainable email triage with synthetic verification evidence"
+requires-python = ">=3.12"
+dependencies = ["Flask==3.1.2", "waitress==3.0.2"]
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2", "playwright==1.55.0"]
+
+[project.scripts]
+phishing-analyzer = "phishing_analyzer.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+phishing_analyzer = ["templates/*.html", "static/*", "samples/*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

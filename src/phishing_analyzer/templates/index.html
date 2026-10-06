@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="csrf-token" content="{{ csrf }}"><title>Phishing Email Analyzer</title><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head>
+<body>
+<header class="top"><a class="brand" href="/" aria-label="Phishing Email Analyzer home"><span class="mark">P</span> PHISHING ANALYZER</a><span class="local"><span class="dot"></span> LOCAL WORKSPACE</span></header>
+<main>
+<section class="intro"><p class="eyebrow">EMAIL TRIAGE / EXPLAINABLE ANALYSIS</p><h1>Look closer.<br><span>Before you click.</span></h1><p class="lead">Inspect an email's signals, understand the evidence,<br class="desktop"> and decide what deserves a second look.</p></section>
+<div class="workspace">
+<section class="card input-card" aria-labelledby="upload-heading"><div class="section-top"><span class="step">01</span><h2 id="upload-heading">Start an analysis</h2></div>
+<label class="drop" for="email-file"><span class="upload-icon" aria-hidden="true">↥</span><strong>Upload a saved email</strong><span id="file-description">Choose an .eml file · up to 5 MiB</span><input id="email-file" type="file" accept=".eml" aria-label="Upload a saved email" aria-describedby="file-description"></label>
+<div class="divider"><span>OR EXPLORE A SAMPLE</span></div>
+<label class="field-label" for="sample">Choose a sample</label><select id="sample"><option value="">Select an educational example</option><option value="benign">Everyday email · reservation</option><option value="suspicious">Suspicious email · account notice</option><option value="attachment">Attachment · disguised executable</option><option value="partial">Incomplete email · malformed MIME</option></select>
+<button class="primary" id="analyze" type="button">Analyze email <span aria-hidden="true">↗</span></button>
+<p class="status" id="status" role="status" aria-live="polite">Ready when you are.</p>
+<div class="privacy"><span aria-hidden="true">◇</span><p><strong>Stays on your computer.</strong><br>Local analysis — no links or attachments are opened. Emails are not saved by the app.</p></div>
+</section>
+<section class="card empty" id="empty" aria-labelledby="empty-title"><div class="empty-art" aria-hidden="true"><div class="art-envelope">@</div><span class="art-label">FROM</span><span class="art-label second">LINKS</span><span class="art-label third">FILES</span></div><p class="eyebrow">EVIDENCE, NOT GUESSWORK</p><h2 id="empty-title">Every signal has a story.</h2><p>Your report will show what was observed,<br>why it matters, and what to review next.</p><div class="chips"><span>Sender checks</span><span>Link inspection</span><span>Attachment signals</span></div></section>
+<section class="report" id="report" hidden aria-label="Email analysis report" tabindex="-1"></section>
+</div>
+<section class="how"><div><span>01 / INSPECT</span><h3>Read the evidence</h3><p>Headers, destinations, and attachment metadata — with no external lookups.</p></div><div><span>02 / UNDERSTAND</span><h3>Know the limitations</h3><p>A concern rating is a triage aid. It never establishes that an email is safe.</p></div><div><span>03 / DOCUMENT</span><h3>Take the report with you</h3><p>Download structured findings for review. Share only sanitized, synthetic evidence.</p></div></section>
+</main><footer><span>Built for thoughtful security analysis.</span><span>LOCAL ONLY · RULESET 1.0</span></footer>
+</body></html>
